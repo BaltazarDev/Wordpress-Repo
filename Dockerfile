@@ -1,8 +1,8 @@
 FROM wordpress:php8.4-apache
 
 # Install dependencies for Imagick
-RUN apt-get update && apt-get install -y \
-    libmagickwand-dev --no-install-recommends \
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    libmagickwand-dev \
     && pecl install imagick \
     && docker-php-ext-enable imagick \
     && rm -rf /var/lib/apt/lists/*
