@@ -8,4 +8,4 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy custom php.ini configuration
-COPY uploads.ini $PHP_INI_DIR/conf.d/uploads.ini
+COPY uploads.ini /usr/local/etc/php/conf.d/uploads.ini
