@@ -3,8 +3,11 @@ version: '3.8'
 services:
   wordpress:
     build: .
-    ports:
-      - "${PORT:-80}:80"
+    # Remove ports mapping to avoid conflict with Coolify proxy (Traefik)
+    expose:
+      - "80"
+    # ports:
+    #   - "${PORT:-8000}:80"
     environment:
       WORDPRESS_DB_HOST: db
       WORDPRESS_DB_USER: ${WORDPRESS_DB_USER}
